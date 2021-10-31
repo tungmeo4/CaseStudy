@@ -9,10 +9,11 @@ class game{
     init() {
         this.canvas =document.createElement('canvas');
         this.context = this.canvas.getContext('2d');
-        this.canvas.width = 600;
-        this.canvas.height = 600;
+        this.canvas.width = 400;
+        this.canvas.height = 400;
         document.body.appendChild(this.canvas);
         this.snake = new snake(this);
+        this.food = new food(this);
     }
 
     loop() {
@@ -24,11 +25,15 @@ class game{
 
     update() {
         this.snake.update();
+        if (this.snake.eat(this.food.x, this.food.y)) {
+            this.food.update();
+        }
     }
 
     draw() {
         this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
         this.snake.draw();
+        this.food.draw();
     }
 }
 let g = new game()
