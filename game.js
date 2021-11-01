@@ -1,4 +1,3 @@
-let g = new game()
 class game{
     constructor() {
         this.canvas = null;
@@ -20,7 +19,7 @@ class game{
     loop() {
         this.update();
         this.draw();
-        setTimeout(() => this.loop(), 60);
+        setTimeout(() => this.loop(), 100);
 
     }
 
@@ -37,4 +36,4 @@ class game{
         this.food.draw();
     }
 }
-
+let g = new game()
