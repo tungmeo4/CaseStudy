@@ -1,3 +1,4 @@
+let g = new game()
 class game{
     constructor() {
         this.canvas = null;
@@ -36,4 +37,4 @@ class game{
         this.food.draw();
     }
 }
-let g = new game()
+
